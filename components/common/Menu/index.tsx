@@ -15,13 +15,13 @@ const Menu = ({ variant }: MenuType) => {
   return (
     <ul className={style}>
       {menuItems.map((i) => (
-        <nav
+        <li
           className="wrapper text-slate-500 text-md cursor-pointer"
           key={i.id}
         >
           <span>{i.title}</span>
           <div className="underline" />
-        </nav>
+        </li>
       ))}
     </ul>
   );

@@ -23,11 +23,13 @@ function SubMenu() {
       id: 0,
       icon: IoShareSocialOutline,
       handleClick: () => setShowSocialMenu((showSocialMenu) => !showSocialMenu),
+      label: "social-icon",
     },
     {
       id: 1,
       icon: FiMenu,
       handleClick: () => setShowMobileMenu((showMobileMenu) => !showMobileMenu),
+      label: "menu-icon",
     },
   ];
 
@@ -40,7 +42,7 @@ function SubMenu() {
             onClick={() => i.handleClick()}
             key={i.id}
           >
-            <IconImage iconImage={i.icon} />
+            <IconImage iconImage={i.icon} label={i.label} />
           </div>
         );
       })}

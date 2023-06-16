@@ -15,7 +15,7 @@ const SocialIcons = ({ variant }: SocialIconsType) => {
     >
       <div className="flex flex-col  lg:flex-row gap-6 w-full items-center lg:gap-4 text-xl font-light text-slate-400">
         {iconsList.map((i: Icon) => (
-          <IconImage iconImage={i.icon} key={i.id} />
+          <IconImage iconImage={i.icon} key={i.id} label="social-icon" />
         ))}
       </div>
     </div>
@@ -23,9 +23,9 @@ const SocialIcons = ({ variant }: SocialIconsType) => {
 };
 export default React.memo(SocialIcons);
 
-export const IconImage = (props: { iconImage: IconType }) => {
+export const IconImage = (props: { iconImage: IconType; label?: string }) => {
   return (
-    <button className="hover:text-slate-700" aria-label="icon">
+    <button className="hover:text-slate-700" aria-label={props.label}>
       {props.iconImage && <props.iconImage />}
     </button>
   );
