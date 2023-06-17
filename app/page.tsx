@@ -1,9 +1,10 @@
+import DataTable from "@/components/ui/DataTable/";
 import React from "react";
 
 type Props = {};
 
 const App = (props: Props) => {
-  return <div>App</div>;
+  return <DataTable />;
 };
 
 export default App;
