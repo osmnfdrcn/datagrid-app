@@ -1,8 +1,7 @@
-import React, { useMemo } from "react";
-import Logo from "./Logo";
+import React from "react";
 import Menu from "../../common/Menu";
-import SocialIcons from "./IconsArea/SocialIcons";
 import IconsArea from "./IconsArea";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (

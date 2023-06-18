@@ -49,6 +49,16 @@ export function DataTableWrapper<TData, TValue>({
       columnFilters,
       columnVisibility,
     },
+    // https://github.com/TanStack/table/issues/4280
+
+    // globalFilterFn: (row, columnId, filterValue) => {
+    //   const safeValue = (() => {
+    //     const value = row.getValue(columnId);
+    //     return typeof value === "number" ? String(value) : value;
+    //   })();
+
+    //   return safeValue?.toLowerCase().includes(filterValue.toLowerCase());
+    // },
   });
 
   return (

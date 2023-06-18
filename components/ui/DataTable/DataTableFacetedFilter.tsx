@@ -55,12 +55,12 @@ export function DataTableFacetedFilter<TData, TValue>({
                 {selectedValues.size}
               </Badge>
               <div className="hidden space-x-1 lg:flex">
-                {selectedValues.size > 2 ? (
+                {selectedValues.size > 0 ? (
                   <Badge
                     variant="secondary"
                     className="rounded-sm px-1 font-normal"
                   >
-                    {selectedValues.size} selected
+                    {selectedValues.size} secildi.
                   </Badge>
                 ) : (
                   options
@@ -80,7 +80,7 @@ export function DataTableFacetedFilter<TData, TValue>({
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0 bg-white" align="start">
+      <PopoverContent className=" p-2 bg-white" align="start">
         <Command>
           <CommandInput placeholder={title} />
           <CommandList>
@@ -132,7 +132,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                 <CommandGroup>
                   <CommandItem
                     onSelect={() => column?.setFilterValue(undefined)}
-                    className="justify-center text-center"
+                    className="justify-center text-center bg-slate-500 text-white"
                   >
                     Filtreleri Temizle
                   </CommandItem>

@@ -2,7 +2,7 @@ import { Input } from "@/components/common/input";
 import { Button } from "@/components/common/button";
 import { X } from "lucide-react";
 
-import React from "react";
+import React, { useState } from "react";
 import { DataTableFacetedFilter } from "./DataTableFacetedFilter";
 import { SocialDataType } from "@/types";
 
@@ -29,11 +29,11 @@ const DataTableSearch = ({ table, entries }: Props) => {
     table.getPreFilteredRowModel().rows.length >
     table.getFilteredRowModel().rows.length;
 
-  const uniqueSocialNameFieldValues = transformArray(entries, "socialName");
   const uniqueSocialLinkFieldValues = transformArray(entries, "socialLink");
+  const uniqueDescriptionFieldValues = transformArray(entries, "description");
 
   return (
-    <div className="flex justify-start items-center gap-4">
+    <div className="flex justify-start items-center gap-4 w-full">
       <Input
         placeholder="Ara..."
         value={
@@ -45,13 +45,6 @@ const DataTableSearch = ({ table, entries }: Props) => {
         className="max-w-xs focus"
       />
 
-      {table.getColumn("socialName") && (
-        <DataTableFacetedFilter
-          column={table.getColumn("socialName")}
-          title="Name"
-          options={uniqueSocialNameFieldValues}
-        />
-      )}
       {table.getColumn("socialLink") && (
         <DataTableFacetedFilter
           column={table.getColumn("socialLink")}
@@ -59,6 +52,14 @@ const DataTableSearch = ({ table, entries }: Props) => {
           options={uniqueSocialLinkFieldValues}
         />
       )}
+      {table.getColumn("description") && (
+        <DataTableFacetedFilter
+          column={table.getColumn("description")}
+          title="Description"
+          options={uniqueDescriptionFieldValues}
+        />
+      )}
+
       {isFiltered && (
         <Button
           variant="ghost"
