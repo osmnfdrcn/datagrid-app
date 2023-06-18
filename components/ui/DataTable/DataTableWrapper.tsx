@@ -33,6 +33,7 @@ export function DataTableWrapper<TData, TValue>({
   );
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
+
   const table = useReactTable({
     data,
     columns,
@@ -52,9 +53,9 @@ export function DataTableWrapper<TData, TValue>({
 
   return (
     <>
-      <div className="flex items-center justify-between py-4">
-        <DataTableSearch table={table} />
-        <DataTableAdd table={table} />
+      <div className="flex items-center justify-between gap-8 py-4">
+        <DataTableSearch table={table} entries={data as any} />
+        <DataTableAdd />
       </div>
       <TableComponent table={table} />
       <DataTablePagination table={table} />

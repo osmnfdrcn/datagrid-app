@@ -14,21 +14,28 @@ export type SocialMediaDataType = {
 export const columns: ColumnDef<SocialMediaDataType>[] = [
   {
     accessorKey: "socialName",
+    // accessorFn: (table) => table.toString(),
     header: ({ column }) => {
       return (
-        <Button
-          variant="ghost"
+        <div
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="flex cursor-pointer"
         >
           Social Name
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
+          <ArrowUpDown className="text-left ml-2 h-4 w-4" />
+        </div>
       );
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id));
     },
   },
   {
     accessorKey: "socialLink",
     header: () => <div className="text-left">Link</div>,
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id));
+    },
   },
   {
     accessorKey: "description",

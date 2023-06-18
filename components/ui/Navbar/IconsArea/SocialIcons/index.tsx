@@ -25,7 +25,10 @@ export default React.memo(SocialIcons);
 
 export const IconImage = (props: { iconImage: IconType; label?: string }) => {
   return (
-    <button className="hover:text-slate-700" aria-label={props.label}>
+    <button
+      className="hover:text-slate-700 transition duration-500"
+      aria-label={props.label}
+    >
       {props.iconImage && <props.iconImage />}
     </button>
   );
