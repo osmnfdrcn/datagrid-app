@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoShareSocialOutline } from "react-icons/io5";
-import Menu from "../../../../common/Menu";
+import Menu from "../../Menu";
 import SocialIcons, { IconImage } from "../SocialIcons";
 import SubMenuWrapper from "./SubMenuWrapper";
 import { useOnClickOutside } from "usehooks-ts";

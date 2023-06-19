@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../../common/Menu";
+import Menu from "./Menu";
 import IconsArea from "./IconsArea";
 import Logo from "./Logo";
 

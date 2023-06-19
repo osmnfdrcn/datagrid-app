@@ -12,18 +12,14 @@ const DataTableAdd = () => {
   };
 
   return (
-    <>
-      <Button
-        className="bg-slate-100 text-slate-500 hover:bg-slate-300 transition duration-500"
-        variant="outline"
-        size="sm"
-        onClick={handleAddd}
-        disabled={isLoading}
-      >
-        <Plus className="mr-2 h-4 w-4" /> Yeni
-      </Button>
-      {error}
-    </>
+    <Button
+      className="bg-slate-100 text-slate-500 hover:bg-slate-300 transition duration-500"
+      variant="outline"
+      size="sm"
+      onClick={handleAddd}
+    >
+      <Plus className="mr-2 h-4 w-4" /> Yeni
+    </Button>
   );
 };
 

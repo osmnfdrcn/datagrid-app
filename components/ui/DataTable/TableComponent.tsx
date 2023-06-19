@@ -54,7 +54,7 @@ const TableComponent = ({ table }: Props) => {
                   getVisibleCells: () => any[];
                 }) => (
                   <TableRow
-                    className="hover:bg-blue-50 cursor-pointer text-sm"
+                    className="hover:bg-blue-50 cursor-pointer text-xs : md:text-sm"
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
                   >

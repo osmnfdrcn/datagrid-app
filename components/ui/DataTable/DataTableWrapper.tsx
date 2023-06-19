@@ -63,7 +63,7 @@ export function DataTableWrapper<TData, TValue>({
 
   return (
     <>
-      <div className="flex items-center justify-between gap-8 py-4">
+      <div className="flex items-start justify-between gap-8 py-4">
         <DataTableSearch table={table} entries={data as any} />
         <DataTableAdd />
       </div>

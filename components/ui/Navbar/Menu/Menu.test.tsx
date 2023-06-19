@@ -4,9 +4,9 @@ import Menu from "./";
 
 describe("Menu", () => {
   test("renders without errors", () => {
+    // variant value (row or col) does not effect container's content.
     render(<Menu variant={"row"} />);
-    let menuItems = screen.getAllByRole("listitem");
-    // hardcodded : social menu icon and mobile menu icon => 2
+    const menuItems = screen.getAllByRole("listitem");
     expect(menuItems).toHaveLength(4);
   });
 });

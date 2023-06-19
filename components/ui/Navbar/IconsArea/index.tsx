@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import SocialIcons from "./SocialIcons";
 import SubMenu from "./SubMenu";
 

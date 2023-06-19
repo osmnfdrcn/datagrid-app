@@ -7,10 +7,16 @@ import { useFormik } from "formik";
 import { IoMdClose } from "react-icons/io";
 import { v4 as uuidv4 } from "uuid";
 import FormSchema from "./FormSchema";
+import { useCallback } from "react";
+
 const AddNewEntryModal = () => {
   const dispatch = useAppDispatch();
   const { showAddDataModal } = useAppSelector((store: RootState) => store.app);
-  const handleCloseModal = () => dispatch(setShowAddDataModal(false));
+
+  const handleCloseModal = useCallback(
+    () => dispatch(setShowAddDataModal(false)),
+    [showAddDataModal]
+  );
 
   const formik = useFormik({
     initialValues: {
@@ -38,7 +44,7 @@ const AddNewEntryModal = () => {
 
   return (
     <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none    bg-neutral-800/70">
-      <div className="relative w-full md:w-[400px] my-6 mx-auto  md:h-auto lg:h-auto">
+      <div className="relative w-[400px] my-6 mx-auto  md:h-auto lg:h-auto">
         {/* CONTENT */}
         <div
           className={`
@@ -56,7 +62,7 @@ const AddNewEntryModal = () => {
               >
                 <IoMdClose size={18} />
               </button>
-              <div className="text-lg font-semibold">{"YENI KAYIT"} </div>
+              <h1 className="text-lg font-semibold">{"YENI KAYIT"} </h1>
             </div>
             {/* FORM */}
             <div className="relative p-6 ">

@@ -1,7 +1,6 @@
-"use client";
-import React, { useState } from "react";
-import { iconsList, Icon } from "./iconsList";
+import React from "react";
 import { IconType } from "react-icons";
+import { Icon, iconsList } from "./iconsList";
 
 type SocialIconsType = {
   variant?: "submenu";
